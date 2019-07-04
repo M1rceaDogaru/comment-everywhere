@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CommentEverywhere.Models.CommentViewModel>
+<div class="comments">
+    @foreach (var comment in Model)
+    {
+        <span>@comment.Username said on @comment.Added.ToShortDateString() at @comment.Added.ToShortTimeString()</span><br/>
+        <span>@comment.Text</span>
+        <hr />
+    }
+</div>
+<div class="add-comment">
+    <input type="text" id="comment" />
+    <input type="button" value="SEND" />
+</div>
